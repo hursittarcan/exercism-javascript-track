@@ -1,4 +1,8 @@
 export const translate = (rna) => {
+    if (!rna || rna.length === 0) {
+        return [];
+    }
+
     let codons = [];
     let proteins = [];
 
@@ -43,7 +47,7 @@ export const translate = (rna) => {
                 proteins.push('Tryptophan');
                 break;
             default:
-                throw new Error('Error: Invalid codon');
+                throw new Error('Invalid codon');
         }
     }
     return proteins;
